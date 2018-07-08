@@ -1,0 +1,491 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4700781-94F1-41A2-BBD5-4E2E887C66B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Labyrinth3</RootNamespace>
+    <AssemblyName>Labyrinth3</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\Collections\AnnotationCollection.cs" />
+    <Compile Include="Data\Collections\ElementCollection.cs" />
+    <Compile Include="Data\Collections\LinkCollection.cs" />
+    <Compile Include="Data\Collections\NoteCollection.cs" />
+    <Compile Include="Data\Collections\StructureCollection.cs" />
+    <Compile Include="Data\Collections\TaskCollection.cs" />
+    <Compile Include="Data\Collections\TimelineCollection.cs" />
+    <Compile Include="Data\Collections\TimelineItemCollection.cs" />
+    <Compile Include="Data\Collections\TimelinePointCollection.cs" />
+    <Compile Include="Data\Events\ElementEventArgs.cs" />
+    <Compile Include="Data\Events\ElementEventHandler.cs" />
+    <Compile Include="Data\Events\NoteEventArgs.cs" />
+    <Compile Include="Data\Events\NoteEventHandler.cs" />
+    <Compile Include="Data\Events\StructureEventArgs.cs" />
+    <Compile Include="Data\Events\StructureEventHandler.cs" />
+    <Compile Include="Data\Events\TimelineEventArgs.cs" />
+    <Compile Include="Data\Events\TimelineEventHandler.cs" />
+    <Compile Include="Data\Extensibility\IAddIn.cs" />
+    <Compile Include="Data\Extensibility\IAddInComponent.cs" />
+    <Compile Include="Data\Extensibility\IAnnotationPage.cs" />
+    <Compile Include="Data\Extensibility\IApplication.cs" />
+    <Compile Include="Data\Extensibility\ICalendarPage.cs" />
+    <Compile Include="Data\Extensibility\ICommand.cs" />
+    <Compile Include="Data\Extensibility\ICustomSearch.cs" />
+    <Compile Include="Data\Extensibility\IElementPage.cs" />
+    <Compile Include="Data\Extensibility\IExplorerPage.cs" />
+    <Compile Include="Data\Extensibility\INotePage.cs" />
+    <Compile Include="Data\Extensibility\IPage.cs" />
+    <Compile Include="Data\Extensibility\ISearchPage.cs" />
+    <Compile Include="Data\Extensibility\IStructurePage.cs" />
+    <Compile Include="Data\Extensibility\ITaskPage.cs" />
+    <Compile Include="Data\Extensibility\ITimelinePage.cs" />
+    <Compile Include="Data\Plot\Annotation.cs" />
+    <Compile Include="Data\Plot\Element.cs" />
+    <Compile Include="Data\Plot\ElementType.cs" />
+    <Compile Include="Data\Plot\Importance.cs" />
+    <Compile Include="Data\Plot\Link.cs" />
+    <Compile Include="Data\Plot\LinkAnnotation.cs" />
+    <Compile Include="Data\Plot\LinkDirection.cs" />
+    <Compile Include="Data\Plot\Node.cs" />
+    <Compile Include="Data\Plot\Note.cs" />
+    <Compile Include="Data\Plot\Project.cs" />
+    <Compile Include="Data\Plot\ScheduleType.cs" />
+    <Compile Include="Data\Plot\SearchResult.cs" />
+    <Compile Include="Data\Plot\SketchAnnotation.cs" />
+    <Compile Include="Data\Plot\Structure.cs" />
+    <Compile Include="Data\Plot\Task.cs" />
+    <Compile Include="Data\Plot\TextAnnotation.cs" />
+    <Compile Include="Data\Plot\Timeline.cs" />
+    <Compile Include="Data\Plot\TimelineItem.cs" />
+    <Compile Include="Data\Plot\TimelinePoint.cs" />
+    <Compile Include="IDE\Annotations.cs" />
+    <Compile Include="IDE\Controls\AnnotationList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IDE\Controls\AnnotationPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Controls\ColorPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IDE\Controls\ElementTypeBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IDE\Controls\RTFPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Controls\StructureView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Controls\TimelineGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Extensibility\AddInManager.cs" />
+    <Compile Include="IDE\FileConversion.cs" />
+    <Compile Include="IDE\Forms\AboutDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\AddInDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\ElementDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\FileLinkAnnotationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\LinkDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\MergeElementsDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\NoteDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\ProjectDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\SketchAnnotationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\StructureDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\TaskDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\TextAnnotationDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\TimelineDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Forms\TimelinePointDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\LabyrinthData.cs" />
+    <Compile Include="IDE\LabyrinthMain.cs" />
+    <Compile Include="IDE\ListViewSorter.cs" />
+    <Compile Include="IDE\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\AnnotationPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\CalendarPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\ElementPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\NotePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\SearchPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\StructurePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\TaskPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\Pages\TimelinePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IDE\StartupData.cs" />
+    <Compile Include="Crownwood.Magic\Collections\CollectionWithEvents.cs" />
+    <Compile Include="Crownwood.Magic\Collections\ContentCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\HotZoneCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\ManagerContentCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\MenuCommandCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\StringCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\TabGroupBaseCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\TabPageCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\TargetCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\WindowCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\WindowDetailCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\WizardPageCollection.cs" />
+    <Compile Include="Crownwood.Magic\Collections\ZoneCollection.cs" />
+    <Compile Include="Crownwood.Magic\Common\ColorHelper.cs" />
+    <Compile Include="Crownwood.Magic\Common\ControlHelper.cs" />
+    <Compile Include="Crownwood.Magic\Common\ConversionHelper.cs" />
+    <Compile Include="Crownwood.Magic\Common\DebugHelper.cs" />
+    <Compile Include="Crownwood.Magic\Common\DrawHelper.cs" />
+    <Compile Include="Crownwood.Magic\Common\Enums.cs" />
+    <Compile Include="Crownwood.Magic\Common\ResourceHelper.cs" />
+    <Compile Include="Crownwood.Magic\Controls\BorderForControl\BorderForControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\InertButton\InertButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\ResizeBar\ResizeBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\TabbedGroups\TabbedGroupEventArgs.cs" />
+    <Compile Include="Crownwood.Magic\Controls\TabbedGroups\TabbedGroups.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\TabbedGroups\TabGroupBase.cs" />
+    <Compile Include="Crownwood.Magic\Controls\TabbedGroups\TabGroupLeaf.cs" />
+    <Compile Include="Crownwood.Magic\Controls\TabbedGroups\TabGroupSequence.cs" />
+    <Compile Include="Crownwood.Magic\Controls\TabbedGroups\Target.cs" />
+    <Compile Include="Crownwood.Magic\Controls\TabControl\TabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\TabControl\TabControlDesigner.cs" />
+    <Compile Include="Crownwood.Magic\Controls\TabControl\TabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\WizardControl\WizardControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Controls\WizardControl\WizardControlDesigner.cs" />
+    <Compile Include="Crownwood.Magic\Controls\WizardControl\WizardPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\AutoHidePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\Content.cs" />
+    <Compile Include="Crownwood.Magic\Docking\Definitions.cs" />
+    <Compile Include="Crownwood.Magic\Docking\DockingManager.cs" />
+    <Compile Include="Crownwood.Magic\Docking\FloatinglForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\HotZone.cs" />
+    <Compile Include="Crownwood.Magic\Docking\HotZoneFloating.cs" />
+    <Compile Include="Crownwood.Magic\Docking\HotZoneNull.cs" />
+    <Compile Include="Crownwood.Magic\Docking\HotZoneReposition.cs" />
+    <Compile Include="Crownwood.Magic\Docking\HotZoneSequence.cs" />
+    <Compile Include="Crownwood.Magic\Docking\HotZoneTabbed.cs" />
+    <Compile Include="Crownwood.Magic\Docking\Redocker.cs" />
+    <Compile Include="Crownwood.Magic\Docking\RedockerContent.cs" />
+    <Compile Include="Crownwood.Magic\Docking\Restore.cs" />
+    <Compile Include="Crownwood.Magic\Docking\TabStub.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\Window.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\WindowContent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\WindowContentTabbed.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\WindowDetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\WindowDetailCaption.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\Zone.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Docking\ZoneHelper.cs" />
+    <Compile Include="Crownwood.Magic\Docking\ZoneSequence.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Forms\WizardDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Menus\DrawCommand.cs" />
+    <Compile Include="Crownwood.Magic\Menus\MenuCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Menus\MenuControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crownwood.Magic\Menus\MenuControlDesigner.cs" />
+    <Compile Include="Crownwood.Magic\Menus\PopupMenu.cs" />
+    <Compile Include="Crownwood.Magic\Win32\Enums.cs" />
+    <Compile Include="Crownwood.Magic\Win32\Gdi32.cs" />
+    <Compile Include="Crownwood.Magic\Win32\Structs.cs" />
+    <Compile Include="Crownwood.Magic\Win32\User32.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="IDE\Controls\AnnotationList.resx">
+      <DependentUpon>AnnotationList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Controls\AnnotationPanel.resx">
+      <DependentUpon>AnnotationPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Controls\ColorPanel.resx">
+      <DependentUpon>ColorPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Controls\ElementTypeBox.resx">
+      <DependentUpon>ElementTypeBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Controls\RTFPanel.resx">
+      <DependentUpon>RTFPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Controls\StructureView.resx">
+      <DependentUpon>StructureView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Controls\TimelineGrid.resx">
+      <DependentUpon>TimelineGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\AboutDlg.resx">
+      <DependentUpon>AboutDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\AddInDlg.resx">
+      <DependentUpon>AddInDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\ElementDlg.resx">
+      <DependentUpon>ElementDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\FileLinkAnnotationDlg.resx">
+      <DependentUpon>FileLinkAnnotationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\LinkDlg.resx">
+      <DependentUpon>LinkDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\MergeElementsDlg.resx">
+      <DependentUpon>MergeElementsDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\NoteDlg.resx">
+      <DependentUpon>NoteDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\ProjectDlg.resx">
+      <DependentUpon>ProjectDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\SketchAnnotationDlg.resx">
+      <DependentUpon>SketchAnnotationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\StructureDlg.resx">
+      <DependentUpon>StructureDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\TaskDlg.resx">
+      <DependentUpon>TaskDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\TextAnnotationDlg.resx">
+      <DependentUpon>TextAnnotationDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\TimelineDlg.resx">
+      <DependentUpon>TimelineDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Forms\TimelinePointDlg.resx">
+      <DependentUpon>TimelinePointDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\LabyrinthData.resx">
+      <DependentUpon>LabyrinthData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\AnnotationPage.resx">
+      <DependentUpon>AnnotationPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\CalendarPage.resx">
+      <DependentUpon>CalendarPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\ElementPage.resx">
+      <DependentUpon>ElementPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\NotePage.resx">
+      <DependentUpon>NotePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\SearchPage.resx">
+      <DependentUpon>SearchPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\StructurePage.resx">
+      <DependentUpon>StructurePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\TaskPage.resx">
+      <DependentUpon>TaskPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IDE\Pages\TimelinePage.resx">
+      <DependentUpon>TimelinePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\BorderForControl\BorderForControl.resx">
+      <DependentUpon>BorderForControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\InertButton\InertButton.resx">
+      <DependentUpon>InertButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\ResizeBar\ResizeBar.resx">
+      <DependentUpon>ResizeBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\TabbedGroups\TabbedGroups.resx">
+      <DependentUpon>TabbedGroups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\TabControl\TabControl.resx">
+      <DependentUpon>TabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\TabControl\TabPage.resx">
+      <DependentUpon>TabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\WizardControl\WizardControl.resx">
+      <DependentUpon>WizardControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Controls\WizardControl\WizardPage.resx">
+      <DependentUpon>WizardPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Docking\AutoHidePanel.resx">
+      <DependentUpon>AutoHidePanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Docking\FloatinglForm.resx">
+      <DependentUpon>FloatinglForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Docking\Window.resx">
+      <DependentUpon>Window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Docking\WindowDetail.resx">
+      <DependentUpon>WindowDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Docking\WindowDetailCaption.resx">
+      <DependentUpon>WindowDetailCaption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Docking\Zone.resx">
+      <DependentUpon>Zone.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Forms\WizardDialog.resx">
+      <DependentUpon>WizardDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Menus\MenuCommand.resx">
+      <DependentUpon>MenuCommand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Crownwood.Magic\Menus\MenuControl.resx">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Crownwood.Magic\Controls\InertButton.bmp" />
+    <Content Include="Crownwood.Magic\Controls\TabbedGroups.bmp" />
+    <Content Include="Crownwood.Magic\Controls\TabControl.bmp" />
+    <Content Include="Crownwood.Magic\Controls\WizardControl.bmp" />
+    <Content Include="Crownwood.Magic\Menus\MenuControl.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\ImagesCaptionIDE.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\ImagesCaptionPlain.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\ImagesMenuControl.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\ImagesPopupMenu.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\ImagesTabbedGroups.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\ImagesTabControl.bmp" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\LibraryIcon.ico" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\TabbedInvalid.cur" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\TabbedValid.cur" />
+    <EmbeddedResource Include="Crownwood.Magic\Resources\WizardPicture.bmp" />
+    <Content Include="tempremoved.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

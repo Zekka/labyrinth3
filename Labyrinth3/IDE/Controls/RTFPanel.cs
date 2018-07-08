@@ -273,9 +273,18 @@ namespace Labyrinth.Controls
                 this.StrikeBtn.Pushed = this.ContentBox.SelectionFont.Strikeout;
             }
             this.BulletBtn.Pushed = this.ContentBox.SelectionBullet;
-            this.LeftBtn.Pushed = this.ContentBox.SelectionAlignment == HorizontalAlignment.Left;
-            this.CentreBtn.Pushed = this.ContentBox.SelectionAlignment == HorizontalAlignment.Center;
-            this.RightBtn.Pushed = this.ContentBox.SelectionAlignment == HorizontalAlignment.Right;
+            try
+            {
+                this.LeftBtn.Pushed = this.ContentBox.SelectionAlignment == HorizontalAlignment.Left;
+                this.CentreBtn.Pushed = this.ContentBox.SelectionAlignment == HorizontalAlignment.Center;
+                this.RightBtn.Pushed = this.ContentBox.SelectionAlignment == HorizontalAlignment.Right;
+            }
+            catch (NullReferenceException e)
+            { // this feature is bugged in Mono so pick a default
+                this.LeftBtn.Pushed = true;
+                this.CentreBtn.Pushed = false;
+                this.RightBtn.Pushed = false;
+            }
             this.UnindentBtn.Enabled = this.ContentBox.SelectionIndent > 0;
             this.IndentBtn.Enabled = true;
         }

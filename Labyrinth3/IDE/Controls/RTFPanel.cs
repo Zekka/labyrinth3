@@ -186,6 +186,7 @@ namespace Labyrinth.Controls
             this.ContentBox.ContextMenu = this.RightClickMenu;
             this.ContentBox.Dock = DockStyle.Fill;
             this.ContentBox.Location = new Point(0, 25);
+            this.ContentBox.Font = new Font("Tahoma",8);
             this.ContentBox.Name = "ContentBox";
             this.ContentBox.Size = new Size(472, 159);
             this.ContentBox.TabIndex = 8;

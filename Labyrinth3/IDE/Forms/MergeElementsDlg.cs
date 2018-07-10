@@ -125,7 +125,7 @@ namespace Labyrinth.Forms
             this.TypeBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             this.TypeBox.DrawMode = DrawMode.OwnerDrawVariable;
             this.TypeBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.TypeBox.Items.AddRange(new object[52]
+            this.TypeBox.Items.AddRange(new object[ ]
             {
         (object) ElementType.Generic,
         (object) ElementType.Character,
@@ -140,45 +140,6 @@ namespace Labyrinth.Forms
         (object) ElementType.Concept,
         (object) ElementType.Object,
         (object) ElementType.Event,
-        (object) ElementType.Generic,
-        (object) ElementType.Character,
-        (object) ElementType.Organisation,
-        (object) ElementType.Website,
-        (object) ElementType.EmailAccount,
-        (object) ElementType.PhoneNumber,
-        (object) ElementType.File,
-        (object) ElementType.Puzzle,
-        (object) ElementType.Location,
-        (object) ElementType.Vehicle,
-        (object) ElementType.Concept,
-        (object) ElementType.Object,
-        (object) ElementType.Event,
-        (object) ElementType.Generic,
-        (object) ElementType.Character,
-        (object) ElementType.Organisation,
-        (object) ElementType.Website,
-        (object) ElementType.EmailAccount,
-        (object) ElementType.PhoneNumber,
-        (object) ElementType.File,
-        (object) ElementType.Puzzle,
-        (object) ElementType.Location,
-        (object) ElementType.Vehicle,
-        (object) ElementType.Concept,
-        (object) ElementType.Object,
-        (object) ElementType.Event,
-        (object) ElementType.Generic,
-        (object) ElementType.Character,
-        (object) ElementType.Organisation,
-        (object) ElementType.Website,
-        (object) ElementType.EmailAccount,
-        (object) ElementType.PhoneNumber,
-        (object) ElementType.File,
-        (object) ElementType.Puzzle,
-        (object) ElementType.Location,
-        (object) ElementType.Vehicle,
-        (object) ElementType.Concept,
-        (object) ElementType.Object,
-        (object) ElementType.Event
             });
             this.TypeBox.Location = new Point(64, 304);
             this.TypeBox.Name = "TypeBox";

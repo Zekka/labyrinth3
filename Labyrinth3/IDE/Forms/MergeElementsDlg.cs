@@ -125,7 +125,7 @@ namespace Labyrinth.Forms
             this.TypeBox.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             this.TypeBox.DrawMode = DrawMode.OwnerDrawVariable;
             this.TypeBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.TypeBox.Items.AddRange(new object[13]
+            this.TypeBox.Items.AddRange(new object[ ]
             {
         (object) ElementType.Generic,
         (object) ElementType.Character,

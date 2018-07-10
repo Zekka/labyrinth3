@@ -83,7 +83,8 @@ namespace Labyrinth.Forms
             this.TypeLbl.TextAlign = ContentAlignment.MiddleLeft;
             this.TypeBox.DrawMode = DrawMode.OwnerDrawFixed;
             this.TypeBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            this.TypeBox.Items.AddRange(new object[26]
+            this.TypeBox.Items.Clear();
+            this.TypeBox.Items.AddRange(new object[]
             {
         (object) ElementType.Generic,
         (object) ElementType.Character,
@@ -98,19 +99,6 @@ namespace Labyrinth.Forms
         (object) ElementType.Concept,
         (object) ElementType.Object,
         (object) ElementType.Event,
-        (object) ElementType.Generic,
-        (object) ElementType.Character,
-        (object) ElementType.Organisation,
-        (object) ElementType.Website,
-        (object) ElementType.EmailAccount,
-        (object) ElementType.PhoneNumber,
-        (object) ElementType.File,
-        (object) ElementType.Puzzle,
-        (object) ElementType.Location,
-        (object) ElementType.Vehicle,
-        (object) ElementType.Concept,
-        (object) ElementType.Object,
-        (object) ElementType.Event
             });
             this.TypeBox.Location = new Point(64, 56);
             this.TypeBox.Name = "TypeBox";
